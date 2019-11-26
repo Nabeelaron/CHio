@@ -1,0 +1,17 @@
+{
+    "name": "development",
+    "version": "1.0.0",
+    "description": "desktop application for ClubHouse",
+    "main": "index.js",
+    "scripts": {
+        "start": "C:\\Users\\Nabeel\\Documents\\Projects\\ClubHouseIO_Desk\\Development\\node_modules\\electron\\dist\\electron ."
+    },
+    "keywords": [
+        "ch"
+    ],
+    "author": "Nabeel Aron",
+    "license": "ISC",
+    "dependencies": {
+        "electron": "^7.1.2"
+    }
+}

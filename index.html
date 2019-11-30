@@ -9,20 +9,65 @@
 
     <link rel="stylesheet" type="text/css" href="resources\CSS\style.css">
 
-    <script>
-        function close_() {
-            window.close();
-        }
-    </script>
+
 </head>
 
 <body>
+    <div id="close_button_container">
 
-    <a href="#" onclick="close_()"><img id="close_CH" src="resources\Images\CrossCH.ico"> </img>
-    </a>
+        <a href="#" onclick="close_()"><img id="close_CH" src="resources\Images\CrossCH.ico"> </img>
+        </a>
+    </div>
     <!-- <div id="logo_container"> -->
-    <img id="logo_CH" src="resources\Images\Clubhouse_LogoCH.png"> </img>
+    <a href="#" onclick="go_up('half')"><img id="logo_CH" src="resources\Images\Clubhouse_LogoCH.png"> </img>
+    </a>
     <!-- </div> -->
+    <div id="loading_ball_container">
+        <img id="loading_ball" src="resources\Images\CrossCH.ico" />
+    </div>
+
+
+    <script>
+        function init() {
+            var close_button_container = document.getElementById("close_button_container");
+            close_button_container.style.display = "none";
+        }
+
+        function close_() {
+            window.close();
+        }
+
+        function go_up(limit) {
+
+            if (limit == "half")
+                limit = 200;
+            else
+                limit = 90;
+            // window.scrollX + document.querySelector('#elementId').getBoundingClientRect().left // X
+            var width = document.getElementById('logo_CH').offsetHeight;
+            console.log(width);
+            var pos = document.querySelector('#logo_CH').getBoundingClientRect().top + (width / 2); // Y
+            console.log(pos);
+            var logo_object = document.getElementById("logo_CH");
+            // var pos = 500;
+            var counter = setInterval(move, 6);
+
+            function move() {
+                if (pos == limit) {
+                    clearInterval(counter);
+                } else {
+                    pos--;
+                    logo_object.style.top = pos + "px";
+
+                }
+            }
+
+        }
+
+        /*call functions*/
+        init();
+    </script>
+
 </body>
 
 </html>

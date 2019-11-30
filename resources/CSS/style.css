@@ -18,3 +18,7 @@ body {
     width: 62px;
     height: 62px;
 }
+
+#loading_ball_container {
+    left: 500px;
+}

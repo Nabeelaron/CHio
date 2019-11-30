@@ -34,11 +34,15 @@
             <b>ClubHouse</b></h4>
     </div>
 
-    <button class="button button1" id="get_started">Get Started</button>
+    <button class="button button1" onclick="get_started()" id="get_started">Get Started</button>
 
 
     <script>
         var loaded = 1;
+
+        function get_started() {
+            window.location.href = "resources\\Welcome_page.html";
+        }
 
         function init() {
             hide_element("cross");

@@ -7,46 +7,111 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ClubHouse.io</title>
 
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
     <link rel="stylesheet" type="text/css" href="resources\CSS\style.css">
 
 
 </head>
 
 <body>
-    <div id="close_button_container">
+    <div id="close_button_container" class="w3-container w3-animate-opacity">
 
-        <a href="#" onclick="close_()"><img id="close_CH" src="resources\Images\CrossCH.ico"> </img>
+        <a href="#" id="close_a" onclick="close_()"><img id="close_CH" src="resources\Images\CrossCH.ico"> </img>
         </a>
     </div>
     <!-- <div id="logo_container"> -->
-    <a href="#" onclick="go_up('half')"><img id="logo_CH" src="resources\Images\Clubhouse_LogoCH.png"> </img>
+    <a href="#" onclick="go_up('half')"><img class="w3-animate-zoom" id="logo_CH" src="resources\Images\Clubhouse_LogoCH.png"> </img>
     </a>
     <!-- </div> -->
-    <div id="loading_ball_container">
+    <div id="loading_ball_container" class="w3-container w3-animate-opacity">
         <img id="loading_ball" src="resources\Images\CrossCH.ico" />
     </div>
 
+    <div class="w3-container w3-center" id="text_container">
+        <h4 class="w3-opacity">
+            <b>ClubHouse</b></h4>
+    </div>
+
+    <button class="button button1" id="get_started">Get Started</button>
+
 
     <script>
+        var loaded = 1;
+
         function init() {
-            var close_button_container = document.getElementById("close_button_container");
-            close_button_container.style.display = "none";
+            hide_element("cross");
+            hide_element("loading");
+            hide_element("get_started");
+            hide_element("text_container");
+        }
+
+        function show_element(index = "cross") {
+            if (index == "cross") {
+                var close_button_container = document.getElementById("close_button_container");
+                close_button_container.style.display = "block";
+            } else if (index == "loading") {
+                var loading_ball_container = document.getElementById("loading_ball_container");
+                loading_ball_container.style.display = "block";
+            } else if (index == "get_started") {
+                var get_started_button = document.getElementById("get_started");
+                get_started_button.style.display = "block";
+            } else if (index == "text_container") {
+                var get_started_button = document.getElementById("text_container");
+                get_started_button.style.display = "block";
+            } else {}
+        }
+
+        function hide_element(index = "cross") {
+            if (index == "cross") {
+                var close_button_container = document.getElementById("close_button_container");
+                close_button_container.style.display = "none";
+            } else if (index == "loading") {
+                var loading_ball_container = document.getElementById("loading_ball_container");
+                loading_ball_container.style.display = "none";
+            } else if (index == "get_started") {
+                var get_started_button = document.getElementById("get_started");
+                get_started_button.style.display = "none";
+            } else if (index == "text_container") {
+                var get_started_button = document.getElementById("text_container");
+                get_started_button.style.display = "none";
+            } else {}
         }
 
         function close_() {
             window.close();
         }
 
-        function go_up(limit) {
 
+
+        function remove_a() {
+            var a_href = document.getElementById('close_a');
+            a_href.remove();
+        }
+
+        function loading_ball_animate() {
+            console.log("entered loading ball animation function");
+            /*check Function for internet*/
+
+            hide_element("loading");
+            show_element("get_started");
+            show_element("text_container");
+            loaded = 0;
+            go_up("full");
+
+        }
+
+        function go_up(limit) {
+            // remove_a();
             if (limit == "half")
                 limit = 200;
             else
-                limit = 90;
+                limit = 110;
             // window.scrollX + document.querySelector('#elementId').getBoundingClientRect().left // X
             var width = document.getElementById('logo_CH').offsetHeight;
             console.log(width);
-            var pos = document.querySelector('#logo_CH').getBoundingClientRect().top + (width / 2); // Y
+            var pos = Math.ceil(document.querySelector('#logo_CH').getBoundingClientRect().top + (width / 2)); // Y
             console.log(pos);
             var logo_object = document.getElementById("logo_CH");
             // var pos = 500;
@@ -55,16 +120,28 @@
             function move() {
                 if (pos == limit) {
                     clearInterval(counter);
+                    if (loaded === 1) {
+                        show_element("loading");
+                        loading_ball_animate();
+                    }
                 } else {
                     pos--;
                     logo_object.style.top = pos + "px";
-
+                    console.log(pos);
                 }
             }
+
+
+        }
+
+
+
+        function show_get_started() {
 
         }
 
         /*call functions*/
+
         init();
     </script>
 

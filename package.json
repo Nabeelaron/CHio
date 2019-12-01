@@ -12,6 +12,7 @@
     "author": "Nabeel Aron",
     "license": "ISC",
     "dependencies": {
-        "electron": "^7.1.2"
+        "electron": "^7.1.2",
+        "xmlhttprequest": "^1.8.0"
     }
 }

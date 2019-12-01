@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ClubHouse.io</title>
+
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <link rel="stylesheet" type="text/css" href="CSS\style.css">
+    <link rel="stylesheet" type="text/css" href="CSS\nointernet.css">
+
+</head>
+
+<body>
+    <img class="w3-animate-zoom" id="logo_CH" src="Images\Clubhouse_LogoCH.png"> </img>
+
+    <div class="w3-container w3-center w3-animate-opacity" id="text_container">
+        <img class="w3-animate-zoom" id="wifi_signal" src="Images\wifiCH.png"> </img>
+
+        <h3 id="no_internet"><br><br><br> No internet Connection
+        </h3>
+    </div>
+
+    <script>
+        function show_element() {
+            var close_button_container = document.getElementById("text_container");
+            close_button_container.style.display = "block";
+        }
+
+        function hide_element() {
+            var close_button_container = document.getElementById("text_container");
+            close_button_container.style.display = "none";
+        }
+
+        function go_up(limit) {
+            // remove_a();
+            if (limit == "half") limit = 200;
+            else limit = 110;
+            // window.scrollX + document.querySelector('#elementId').getBoundingClientRect().left // X
+            var width = document.getElementById('logo_CH').offsetHeight;
+            console.log(width);
+            var pos = Math.ceil(document.querySelector('#logo_CH').getBoundingClientRect().top + (width / 2)); // Y
+            console.log(pos);
+            var logo_object = document.getElementById("logo_CH");
+            // var pos = 500;
+            var counter = setInterval(move, 3);
+
+            function move() {
+                if (pos == limit) {
+                    clearInterval(counter);
+
+                    show_element();
+                } else {
+                    pos--;
+                    logo_object.style.top = pos + "px";
+                    console.log(pos);
+                }
+            }
+
+        }
+
+        function init() {
+            hide_element();
+            go_up();
+        }
+        init();
+    </script>
+
+</body>
+
+</html>

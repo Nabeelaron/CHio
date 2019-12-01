@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
     <link rel="stylesheet" type="text/css" href="resources\CSS\style.css">
+    <script src="check.js"></script>
 
 
 </head>
@@ -38,6 +39,11 @@
 
 
     <script>
+        const electron = require('electron');
+        const {
+            ipcRenderer
+        } = electron;
+
         var loaded = 1;
 
         function get_started() {
@@ -94,9 +100,15 @@
             a_href.remove();
         }
 
+
+
+
         function loading_ball_animate() {
             console.log("entered loading ball animation function");
             /*check Function for internet*/
+
+            // ipcRenderer.send("check", "foo");
+            check();
 
             hide_element("loading");
             show_element("get_started");

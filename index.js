@@ -7,7 +7,7 @@ const { app, BrowserWindow, Menu, ipcMain } = electron
 app.on('ready', () => {
     var win = new BrowserWindow({
         webPreferences: {
-            nodeIntegration: true
+            nodeIntegration: false
         },
         width: 1200,
         height: 700,

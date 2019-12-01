@@ -12,8 +12,7 @@
 
     <link rel="stylesheet" type="text/css" href="resources\CSS\style.css">
     <script src="check.js"></script>
-
-
+    <script data-main="scripts/main" src="scripts/require.js"></script>
 </head>
 
 <body>
@@ -39,14 +38,15 @@
 
 
     <script>
-        const electron = require('electron');
-        const {
-            ipcRenderer
-        } = electron;
+        // const electron = require('electron');
+        // const {
+        //     ipcRenderer
+        // } = electron;
 
         var loaded = 1;
 
         function get_started() {
+
             window.location.href = "resources\\Welcome_page.html";
         }
 
@@ -131,7 +131,7 @@
             console.log(pos);
             var logo_object = document.getElementById("logo_CH");
             // var pos = 500;
-            var counter = setInterval(move, 6);
+            var counter = setInterval(move, 3);
 
             function move() {
                 if (pos == limit) {

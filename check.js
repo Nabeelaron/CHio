@@ -1,5 +1,5 @@
 function check() {
-    var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+    // var XMLHttpRequest = XMLHttpRequest;
     var xhr = new XMLHttpRequest();
     //index.php is in my web
     xhr.open('HEAD', 'https://www.google.com', true);
@@ -22,3 +22,5 @@ function check() {
         }
     }
 }
+
+// check()

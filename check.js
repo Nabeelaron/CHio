@@ -2,7 +2,7 @@ function check() {
     // var XMLHttpRequest = XMLHttpRequest;
     var xhr = new XMLHttpRequest();
     //index.php is in my web
-    xhr.open('HEAD', 'https://www.google.com', true);
+    xhr.open('HEAD', 'https://www.clubhouse.io', true);
     xhr.send();
     xhr.addEventListener("readystatechange", processRequest, true);
 

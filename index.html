@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
     <link rel="stylesheet" type="text/css" href="resources\CSS\style.css">
-
-
+    <script src="check.js"></script>
+    <script data-main="scripts/main" src="scripts/require.js"></script>
 </head>
 
 <body>
@@ -38,9 +38,15 @@
 
 
     <script>
+        // const electron = require('electron');
+        // const {
+        //     ipcRenderer
+        // } = electron;
+
         var loaded = 1;
 
         function get_started() {
+
             window.location.href = "resources\\Welcome_page.html";
         }
 
@@ -94,9 +100,15 @@
             a_href.remove();
         }
 
+
+
+
         function loading_ball_animate() {
             console.log("entered loading ball animation function");
             /*check Function for internet*/
+
+            // ipcRenderer.send("check", "foo");
+            check();
 
             hide_element("loading");
             show_element("get_started");
@@ -119,7 +131,7 @@
             console.log(pos);
             var logo_object = document.getElementById("logo_CH");
             // var pos = 500;
-            var counter = setInterval(move, 6);
+            var counter = setInterval(move, 3);
 
             function move() {
                 if (pos == limit) {

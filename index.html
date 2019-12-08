@@ -26,7 +26,7 @@
     </a>
     <!-- </div> -->
     <div id="loading_ball_container" class="w3-container w3-animate-opacity">
-        <img id="loading_ball" src="resources\Images\CrossCH.ico" />
+        <img id="loading_ball" src="resources\Images\loading.gif" />
     </div>
 
     <div class="w3-container w3-center" id="text_container">
@@ -105,18 +105,21 @@
 
         function loading_ball_animate() {
 
-
+            function delay_min() {
+                console.log("delayed i think");
+                hide_element("loading");
+                show_element("get_started");
+                show_element("text_container");
+                loaded = 0;
+                go_up("full");
+                remove_a();
+            }
             /*check Function for internet*/
+            setTimeout(delay_min, 1000);
 
-            // ipcRenderer.send("check", "foo");
             check();
 
-            hide_element("loading");
-            show_element("get_started");
-            show_element("text_container");
-            loaded = 0;
-            go_up("full");
-            remove_a();
+
         }
 
         function go_up(limit) {

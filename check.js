@@ -14,7 +14,7 @@ function check() {
             //index.php file will be available even without internet, so do the following validation
             if (xhr.status >= 200 && xhr.status < 304) {
                 //online
-                console.log("online");
+                // console.log("online");
             } else {
 
                 window.location.href = "resources\\nointernet.html";

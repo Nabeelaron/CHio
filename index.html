@@ -130,9 +130,9 @@
                 limit = 110;
             // window.scrollX + document.querySelector('#elementId').getBoundingClientRect().left // X
             var width = document.getElementById('logo_CH').offsetHeight;
-            console.log(width);
+            // console.log(width);
             var pos = Math.ceil(document.querySelector('#logo_CH').getBoundingClientRect().top + (width / 2)); // Y
-            console.log(pos);
+            // console.log(pos);
             var logo_object = document.getElementById("logo_CH");
             // var pos = 500;
             var counter = setInterval(move, 3);
@@ -147,7 +147,7 @@
                 } else {
                     pos--;
                     logo_object.style.top = pos + "px";
-                    console.log(pos);
+                    // console.log(pos);
                 }
             }
 

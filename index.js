@@ -2,7 +2,7 @@ const electron = require('electron')
 
 const { app, BrowserWindow, Menu, ipcMain } = electron
 
-// Menu.setApplicationMenu(null)
+Menu.setApplicationMenu(null)
 
 app.on('ready', () => {
     var win = new BrowserWindow({

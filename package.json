@@ -5,10 +5,10 @@
     "main": "index.js",
     "scripts": {
         "start": "C:\\Users\\Nabeel\\Documents\\Projects\\ClubHouseIO_Desk\\Development\\node_modules\\electron\\dist\\electron .",
-        "create_mac": "electron-packager . 'ClubHouse IO' --platform=darwin --arch=x64 --icon=resources\\Images\\Clubhouse_LogoCH.icns --asar --out=release --overwrite",
-        "create_pc_64": "electron-packager . 'ClubHouse IO' --platform=win32 --arch=x64 --icon=resources\\Images\\Clubhouse_LogoCH.ico --asar --out=release --overwrite",
-        "create_pc_32": "electron-packager . 'ClubHouse IO' --platform=win32 --arch=ia32 --icon=resources\\Images\\Clubhouse_LogoCH.ico --asar --out=release --overwrite",
-        "create_linux": "electron-packager . 'ClubHouse IO' --platform=linux --arch=x64 --icon=resources\\Images\\Clubhouse_LogoCH.png --asar --out=release --overwrite"
+        "create_mac": "electron-packager . ClubHouseIO --platform=darwin --arch=x64 --icon=resources\\Images\\Clubhouse_LogoCH.icns --asar --out=release --overwrite",
+        "create_pc_64": "electron-packager . ClubHouseIO --platform=win32  --icon=resources\\Images\\Clubhouse_LogoCH.ico --asar --out=release --overwrite",
+        "create_pc_32": "electron-packager . ClubHouseIO --platform=win32 --arch=ia32 --icon=resources\\Images\\Clubhouse_LogoCH.ico --asar --out=release --overwrite",
+        "create_linux": "electron-packager . ClubHouseIO --platform=linux --arch=x64 --icon=resources\\Images\\Clubhouse_LogoCH.png --asar --out=release --overwrite"
     },
     "keywords": [
         "ch"
@@ -16,6 +16,7 @@
     "author": "Nabeel Aron",
     "license": "ISC",
     "dependencies": {
+        "custom-electron-titlebar": "^3.1.0",
         "electron": "^7.1.2",
         "electron-packager": "^14.1.1",
         "jquery": "^3.4.1",

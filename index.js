@@ -2,6 +2,9 @@ const electron = require('electron')
 
 const { app, BrowserWindow, Menu, ipcMain } = electron
 
+
+
+
 Menu.setApplicationMenu(null)
 
 app.on('ready', () => {
@@ -15,6 +18,7 @@ app.on('ready', () => {
     })
     win.loadFile("index.html")
         // win.loadURL("https://app.clubhouse.io/")
+
 })
 
 ipcMain.on('check', (event, text) => {
